@@ -13,6 +13,7 @@ interface SearchResult {
   total: number;
 }
 
+
 interface State {
   page: number;
   pageSize: number;
