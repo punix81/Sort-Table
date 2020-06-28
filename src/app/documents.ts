@@ -7,22 +7,22 @@ export const DOCUMENTTS: Document[] = [
     fileName: 'ealsjdlfjaklé',
     fileSize: 20000,
     uploaded: new Date(),
-    uploadedBy: 'string',
+    uploadedBy: 'afwestring',
     allowExtendedMetaData: true,
 
     isNewDocument: true,
     favourite: true,
     toBeDiscussed: true,
-    documentStatus: 'string',
+    documentStatus: 'werstring',
 
-    type: 'string',
-    source: 'string',
-    label : 'string',
+    type: 'swefastring',
+    source: 'acda',
+    label : 'stereardfring',
   },
   {
     id: '2',
-    personId: 'string',
-    fileName: 'strasdfasding',
+    personId: 'awerrgsdfg5string',
+    fileName: 'strasdfawesding',
     fileSize: 20000,
     uploaded: new Date(),
     uploadedBy: 'string',
@@ -31,20 +31,20 @@ export const DOCUMENTTS: Document[] = [
     isNewDocument: true,
     favourite: true,
     toBeDiscussed: true,
-    documentStatus: 'string',
+    documentStatus: 'stzzzzring',
 
-    type: 'string',
-    source: 'string',
-    label : 'string',
+    type: 'ttttstring',
+    source: 'srrttztring',
+    label : 'zzzstring',
 
   },
   {
     id: '3',
-    personId: 'string',
-    fileName: 'qqqqstring',
+    personId: 'ertzstring',
+    fileName: 'erzqqqqstring',
     fileSize: 20000,
     uploaded: new Date(),
-    uploadedBy: 'string',
+    uploadedBy: 'erqwestring',
     allowExtendedMetaData: true,
 
     isNewDocument: true,
@@ -52,14 +52,14 @@ export const DOCUMENTTS: Document[] = [
     toBeDiscussed: true,
     documentStatus: 'string',
 
-    type: 'string',
-    source: 'string',
-    label : 'string',
+    type: 'yyystring',
+    source: 'eeestring',
+    label : 'rrrstring',
 
   },
   {
     id: '4',
-    personId: 'string',
+    personId: 'tttstring',
     fileName: 'aaastring',
     fileSize: 20000,
     uploaded: new Date(),
@@ -69,30 +69,182 @@ export const DOCUMENTTS: Document[] = [
     isNewDocument: true,
     favourite: true,
     toBeDiscussed: true,
-    documentStatus: 'string',
+    documentStatus: 'zzzstring',
 
-    type: 'string',
-    source: 'string',
-    label : 'string',
+    type: '555string',
+    source: 'sttttring',
+    label : 'srrrrtring',
 
   },
   {
     id: '5',
-    personId: 'string',
-    fileName: 'fsdfstring',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
     fileSize: 20000,
     uploaded: new Date(),
-    uploadedBy: 'string',
+    uploadedBy: 'ppppstring',
     allowExtendedMetaData: true,
 
     isNewDocument: true,
     favourite: true,
     toBeDiscussed: true,
-    documentStatus: 'string',
+    documentStatus: 'dfghdfgh',
 
-    type: 'string',
-    source: 'string',
-    label : 'string',
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '6',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '7',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '8',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '9',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '10',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '11',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '12',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
+
+  },
+  {
+    id: '13',
+    personId: 'wwstring',
+    fileName: 'eerrrfsdfstring',
+    fileSize: 20000,
+    uploaded: new Date(),
+    uploadedBy: 'ppppstring',
+    allowExtendedMetaData: true,
+
+    isNewDocument: true,
+    favourite: true,
+    toBeDiscussed: true,
+    documentStatus: 'dfghdfgh',
+
+    type: 'gggstring',
+    source: 'rrrstring',
+    label : 'ttttttstring',
 
   }
 ];
