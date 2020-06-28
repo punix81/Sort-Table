@@ -2,7 +2,7 @@ import {DecimalPipe} from '@angular/common';
 import {Component, QueryList, ViewChildren} from '@angular/core';
 import {Observable} from 'rxjs';
 
-import {Country} from './country';
+import {Document} from './document';
 
 import {NgbdSortableHeader, SortEvent} from './sortable.directive';
 import {DocumentSidebarService} from "./document-sidebar.service";
@@ -11,13 +11,13 @@ import {DocumentSidebarService} from "./document-sidebar.service";
 @Component(
     {selector: 'ngbd-table-complete', templateUrl: './table-complete.html', providers: [DocumentSidebarService, DecimalPipe]})
 export class NgbdTableComplete {
-  countries$: Observable<Country[]>;
+  documents$: Observable<Document[]>;
 
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   constructor(public service: DocumentSidebarService) {
-    this.countries$ = service.documents$;
+    this.documents$ = service.documents$;
   }
 
   onSort({column, direction}: SortEvent) {

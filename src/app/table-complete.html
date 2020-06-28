@@ -4,20 +4,20 @@
     <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col" sortable="name" (sort)="onSort($event)">Country</th>
-      <th scope="col" sortable="area" (sort)="onSort($event)">Area</th>
-      <th scope="col" sortable="population" (sort)="onSort($event)">Population</th>
+      <th scope="col" sortable="fileName" (sort)="onSort($event)">fileName</th>
+      <th scope="col" sortable="personId" (sort)="onSort($event)">personId</th>
+      <th scope="col" sortable="documentStatus" (sort)="onSort($event)">documentStatus</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let country of countries$ | async">
-      <th scope="row">{{ country.id }}</th>
+    <tr *ngFor="let document of documents$ | async">
+      <th scope="row">{{ document.id }}</th>
       <td>
-        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
-        <ngb-highlight [result]="country.name" ></ngb-highlight>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + document.flag" class="mr-2" style="width: 20px">
+        <ngb-highlight [result]="document.fileName" ></ngb-highlight>
       </td>
-      <td><ngb-highlight [result]="country.area" ></ngb-highlight></td>
-      <td><ngb-highlight [result]="country.population" ></ngb-highlight></td>
+      <td><ngb-highlight [result]="document.personId" ></ngb-highlight></td>
+      <td><ngb-highlight [result]="document.documentStatus" ></ngb-highlight></td>
     </tr>
     </tbody>
   </table>

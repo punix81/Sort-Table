@@ -2,15 +2,14 @@ import {Injectable, PipeTransform} from '@angular/core';
 
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 
-import {Country} from './country';
-
 import {DecimalPipe} from '@angular/common';
 import {switchMap} from 'rxjs/operators';
 import {SortColumn, SortDirection} from './sortable.directive';
 import {DOCUMENTTS} from "./documents";
+import {Document} from "./document";
 
 interface SearchResult {
-  documents: Country[];
+  documents: Document[];
   total: number;
 }
 
@@ -25,7 +24,7 @@ interface State {
 
 const compare = (v1: string, v2: string) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
 
-function sort(documents: Country[], column: SortColumn, direction: string): Country[] {
+function sort(documents: Document[], column: SortColumn, direction: string): Document[] {
   if (direction === '' || column === '') {
     return documents;
   } else {
@@ -36,16 +35,16 @@ function sort(documents: Country[], column: SortColumn, direction: string): Coun
   }
 }
 
-function matches(document: Country, term: string, pipe: PipeTransform) {
-  return document.name.toLowerCase().includes(term.toLowerCase())
-    || pipe.transform(document.area).includes(term)
-    || pipe.transform(document.population).includes(term);
+function matches(document: Document, term: string, pipe: PipeTransform) {
+  return document.fileName.toLowerCase().includes(term.toLowerCase())
+    || pipe.transform(document.personId).includes(term)
+    || pipe.transform(document.documentStatus).includes(term);
 }
 
 @Injectable({providedIn: 'root'})
 export class DocumentSidebarService {
   private _search$ = new Subject<void>();
-  private _documents$ = new BehaviorSubject<Country[]>([]);
+  private _documents$ = new BehaviorSubject<Document[]>([]);
 
   private _state: State = {
     page: 1,
