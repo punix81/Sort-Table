@@ -5,7 +5,7 @@ import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 import {Country} from './country';
 import {COUNTRIES} from './countries';
 import {DecimalPipe} from '@angular/common';
-import {debounceTime, delay, switchMap, tap} from 'rxjs/operators';
+import {switchMap} from 'rxjs/operators';
 import {SortColumn, SortDirection} from './sortable.directive';
 
 interface SearchResult {
@@ -50,7 +50,7 @@ export class DocumentSidebarService {
 
   private _state: State = {
     page: 1,
-    pageSize: 4,
+    pageSize: 20,
     searchTerm: '',
     sortColumn: '',
     sortDirection: ''
@@ -58,29 +58,15 @@ export class DocumentSidebarService {
 
   constructor(private pipe: DecimalPipe) {
     this._search$.pipe(
-      tap(() => this._loading$.next(true)),
-      debounceTime(200),
       switchMap(() => this._search()),
-      delay(200),
-      tap(() => this._loading$.next(false))
     ).subscribe(result => {
       this._countries$.next(result.countries);
-      this._total$.next(result.total);
     });
-
     this._search$.next();
   }
 
   get countries$() { return this._countries$.asObservable(); }
-  get total$() { return this._total$.asObservable(); }
-  get loading$() { return this._loading$.asObservable(); }
-  get page() { return this._state.page; }
-  get pageSize() { return this._state.pageSize; }
-  get searchTerm() { return this._state.searchTerm; }
 
-  set page(page: number) { this._set({page}); }
-  set pageSize(pageSize: number) { this._set({pageSize}); }
-  set searchTerm(searchTerm: string) { this._set({searchTerm}); }
   set sortColumn(sortColumn: SortColumn) { this._set({sortColumn}); }
   set sortDirection(sortDirection: SortDirection) { this._set({sortDirection}); }
 

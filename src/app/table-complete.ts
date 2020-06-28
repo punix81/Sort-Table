@@ -12,13 +12,12 @@ import {DocumentSidebarService} from "./document-sidebar.service";
     {selector: 'ngbd-table-complete', templateUrl: './table-complete.html', providers: [DocumentSidebarService, DecimalPipe]})
 export class NgbdTableComplete {
   countries$: Observable<Country[]>;
-  total$: Observable<number>;
+
 
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   constructor(public service: DocumentSidebarService) {
     this.countries$ = service.countries$;
-    this.total$ = service.total$;
   }
 
   onSort({column, direction}: SortEvent) {
