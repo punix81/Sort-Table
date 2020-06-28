@@ -10,7 +10,7 @@ import {SortColumn, SortDirection} from './sortable.directive';
 import {DOCUMENTTS} from "./documents";
 
 interface SearchResult {
-  countries: Country[];
+  documents: Country[];
   total: number;
 }
 
@@ -25,21 +25,21 @@ interface State {
 
 const compare = (v1: string, v2: string) => v1 < v2 ? -1 : v1 > v2 ? 1 : 0;
 
-function sort(countries: Country[], column: SortColumn, direction: string): Country[] {
+function sort(documents: Country[], column: SortColumn, direction: string): Country[] {
   if (direction === '' || column === '') {
-    return countries;
+    return documents;
   } else {
-    return [...countries].sort((a, b) => {
+    return [...documents].sort((a, b) => {
       const res = compare(`${a[column]}`, `${b[column]}`);
       return direction === 'asc' ? res : -res;
     });
   }
 }
 
-function matches(country: Country, term: string, pipe: PipeTransform) {
-  return country.name.toLowerCase().includes(term.toLowerCase())
-    || pipe.transform(country.area).includes(term)
-    || pipe.transform(country.population).includes(term);
+function matches(document: Country, term: string, pipe: PipeTransform) {
+  return document.name.toLowerCase().includes(term.toLowerCase())
+    || pipe.transform(document.area).includes(term)
+    || pipe.transform(document.population).includes(term);
 }
 
 @Injectable({providedIn: 'root'})
@@ -59,7 +59,7 @@ export class DocumentSidebarService {
     this._search$.pipe(
       switchMap(() => this._search()),
     ).subscribe(result => {
-      this._documents$.next(result.countries);
+      this._documents$.next(result.documents);
     });
     this._search$.next();
   }
@@ -86,6 +86,6 @@ export class DocumentSidebarService {
 
     // 3. paginate
     documents = documents.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-    return of({countries: documents, total});
+    return of({documents: documents, total});
   }
 }
