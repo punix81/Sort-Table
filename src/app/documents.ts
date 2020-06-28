@@ -1,6 +1,6 @@
 import {Country} from './country';
 
-export const COUNTRIES: Country[] = [
+export const DOCUMENTTS: Country[] = [
   {
     id: 1,
     name: 'Russia',

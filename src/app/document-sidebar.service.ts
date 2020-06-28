@@ -3,10 +3,11 @@ import {Injectable, PipeTransform} from '@angular/core';
 import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 
 import {Country} from './country';
-import {COUNTRIES} from './countries';
+
 import {DecimalPipe} from '@angular/common';
 import {switchMap} from 'rxjs/operators';
 import {SortColumn, SortDirection} from './sortable.directive';
+import {DOCUMENTTS} from "./documents";
 
 interface SearchResult {
   countries: Country[];
@@ -79,10 +80,10 @@ export class DocumentSidebarService {
     const {sortColumn, sortDirection, pageSize, page, searchTerm} = this._state;
 
     // 1. sort
-    let countries = sort(COUNTRIES, sortColumn, sortDirection);
+    let countries = sort(DOCUMENTTS, sortColumn, sortDirection);
 
     // 2. filter
-    countries = countries.filter(country => matches(country, searchTerm, this.pipe));
+     countries = countries.filter(country => matches(country, searchTerm, this.pipe));
     const total = countries.length;
 
     // 3. paginate
