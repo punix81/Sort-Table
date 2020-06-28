@@ -4,7 +4,7 @@ import {BehaviorSubject, Observable, of, Subject} from 'rxjs';
 
 import {DecimalPipe} from '@angular/common';
 import {switchMap} from 'rxjs/operators';
-import {SortColumn, SortDirection} from './sortable.directive';
+import {SortColumn, SortDirection} from './sortable-Header.directive';
 import {DOCUMENTTS} from "./documents";
 import {Document} from "./document";
 
