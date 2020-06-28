@@ -44,10 +44,8 @@ function matches(country: Country, term: string, pipe: PipeTransform) {
 
 @Injectable({providedIn: 'root'})
 export class DocumentSidebarService {
-  private _loading$ = new BehaviorSubject<boolean>(true);
   private _search$ = new Subject<void>();
-  private _countries$ = new BehaviorSubject<Country[]>([]);
-  private _total$ = new BehaviorSubject<number>(0);
+  private _documents$ = new BehaviorSubject<Country[]>([]);
 
   private _state: State = {
     page: 1,
@@ -61,12 +59,12 @@ export class DocumentSidebarService {
     this._search$.pipe(
       switchMap(() => this._search()),
     ).subscribe(result => {
-      this._countries$.next(result.countries);
+      this._documents$.next(result.countries);
     });
     this._search$.next();
   }
 
-  get countries$() { return this._countries$.asObservable(); }
+  get documents$() { return this._documents$.asObservable(); }
 
   set sortColumn(sortColumn: SortColumn) { this._set({sortColumn}); }
   set sortDirection(sortDirection: SortDirection) { this._set({sortDirection}); }
@@ -80,14 +78,14 @@ export class DocumentSidebarService {
     const {sortColumn, sortDirection, pageSize, page, searchTerm} = this._state;
 
     // 1. sort
-    let countries = sort(DOCUMENTTS, sortColumn, sortDirection);
+    let documents = sort(DOCUMENTTS, sortColumn, sortDirection);
 
     // 2. filter
-     countries = countries.filter(country => matches(country, searchTerm, this.pipe));
-    const total = countries.length;
+     documents = documents.filter(country => matches(country, searchTerm, this.pipe));
+    const total = documents.length;
 
     // 3. paginate
-    countries = countries.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
-    return of({countries, total});
+    documents = documents.slice((page - 1) * pageSize, (page - 1) * pageSize + pageSize);
+    return of({countries: documents, total});
   }
 }

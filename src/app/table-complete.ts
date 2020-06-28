@@ -17,7 +17,7 @@ export class NgbdTableComplete {
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
   constructor(public service: DocumentSidebarService) {
-    this.countries$ = service.countries$;
+    this.countries$ = service.documents$;
   }
 
   onSort({column, direction}: SortEvent) {
