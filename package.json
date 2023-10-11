@@ -7,7 +7,7 @@
     "tslib": "2.0.0",
     "core-js": "2.6.11",
     "zone.js": "0.10.3",
-    "@angular/core": "9.0.7",
+    "@angular/core": "10.2.5",
     "@angular/forms": "9.0.7",
     "@angular/common": "9.0.7",
     "@angular/router": "9.0.7",
